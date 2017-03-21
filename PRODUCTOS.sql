@@ -1,0 +1,89 @@
+-- phpMyAdmin SQL Dump
+-- version 4.4.15.5
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Mar 21, 2017 at 09:08 PM
+-- Server version: 5.6.34-log
+-- PHP Version: 7.0.13
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `Refacciones`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `PRODUCTOS`
+--
+
+CREATE TABLE IF NOT EXISTS `productos` (
+  `idPRODUCTOS` int(32) NOT NULL,
+  `CODIGO` varchar(45) DEFAULT NULL,
+  `DESCRIPCION` varchar(140) NOT NULL,
+  `CATEGORIA` varchar(3) DEFAULT NULL,
+  `DESCRIPCION DE CATEGORIA` varchar(45) DEFAULT NULL,
+  `PRECIO` float NOT NULL,
+  `CLASE` varchar(45) DEFAULT NULL,
+  `ARMADOR` varchar(45) DEFAULT NULL,
+  `SERVICIO` varchar(45) DEFAULT NULL,
+  `REFRENCIA` varchar(4) DEFAULT NULL,
+  `SISTEMA` varchar(45) DEFAULT NULL,
+  `GENERO` varchar(45) DEFAULT NULL,
+  `MARCA` varchar(45) DEFAULT NULL,
+  `EQUIVALENCIA` varchar(45) DEFAULT NULL,
+  `P.DELISTA` varchar(45) DEFAULT NULL,
+  `O.ESP` varchar(45) DEFAULT NULL,
+  `NO.PARTE` varchar(45) DEFAULT NULL,
+  `LINEA` varchar(45) DEFAULT NULL,
+  `PRECIO ANTERIOR` float DEFAULT NULL,
+  `NUEVO PRECIO` float DEFAULT NULL,
+  `INCREMENTO` float DEFAULT NULL,
+  `CLAVE` varchar(45) DEFAULT NULL,
+  `ORIGEN` varchar(45) DEFAULT NULL,
+  `GRUPOS` varchar(45) DEFAULT NULL,
+  `OBSERVACION` varchar(45) DEFAULT NULL,
+  `FECHAS` varchar(45) DEFAULT NULL,
+  `ARTICULO` varchar(45) DEFAULT NULL,
+  `UNIDAD` varchar(45) DEFAULT NULL,
+  `UXCTN` int(8) DEFAULT NULL,
+  `EXISTENCIA` varchar(45) DEFAULT NULL,
+  `PRECIO NETO MN` float DEFAULT NULL,
+  `FOTO` varchar(512) DEFAULT NULL,
+  `CANTIDAD` int(8) DEFAULT NULL,
+  `CANT POR CARTON` int(8) DEFAULT NULL,
+  `PRECIO L4` float DEFAULT NULL,
+  `LINEAS` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `PRODUCTOS`
+--
+ALTER TABLE `PRODUCTOS`
+  ADD PRIMARY KEY (`idPRODUCTOS`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `PRODUCTOS`
+--
+ALTER TABLE `PRODUCTOS`
+  MODIFY `idPRODUCTOS` int(32) NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
