@@ -3,206 +3,310 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+		<meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-		<title>CZ</title>
+		<title>Mck final</title>
 
-		<!-- Add to homescreen for Chrome on Android -->
-		<meta name="mobile-web-app-capable" content="yes">
-		<link rel="icon" sizes="192x192" href="images/android-desktop.png">
-
-		<!-- Add to homescreen for Safari on iOS -->
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="apple-mobile-web-app-title" content="Material Design Lite">
-		<link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
-
-		<!-- Tile icon for Win8 (144x144 + tile color) -->
-		<meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-		<meta name="msapplication-TileColor" content="#3372DF">
-
-		<link rel="shortcut icon" href="images/favicon.png">
-
-		<!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-		<!--
-		<link rel="canonical" href="http://www.example.com/">
-		-->
+		<!-- Page styles -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-pink.min.css">-->
+		<!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">-->
 		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-light_green.min.css" /> 
 		<link rel="stylesheet" href="css/styles.css">
-		<link rel="stylesheet" type="text/css" href="css/main.css">
-		<style>
-		.demo-layout-transparent {
-			background: url('assets/transparent.jpg') center / cover;
-			/*height: 15em;*/
-			}
-			.demo-layout-transparent .mdl-layout__header,
-			.demo-layout-transparent .mdl-layout__drawer-button {
-			/* This background is dark, so we set text to white. Use 87% black instead if
-			your background is light. */
-			color: white;
-		}
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<!-- Scripts -->
+		<script type="text/javascript" src="js/modernizr-custom.js"></script>
 
-		.demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type  {
-			padding-right: 0;
+		<style>
+		#view-source {
+			position: fixed;
+			display: block;
+			right: 0;
+			bottom: 0;
+			margin-right: 40px;
+			margin-bottom: 40px;
+			z-index: 900;
 		}
 		</style>
 	</head>
-	<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+	<body>
 		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-		<header class="demo-layout-transparent mdl-layout__header mdl-layout__header--waterfall">
-			<div class="mdl-layout--large-screen-only mdl-layout__header-row">
-				<!-- Title -->
-				<span class="mdl-layout-title"><h3>Refacciones MCK</h3></span>
-				<div class="mdl-layout-spacer"></div>
-				<div class="mdl-layout-spacer"></div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
-					<label class="mdl-button mdl-js-button mdl-button--icon" for="waterfall-exp">
-						<i class="material-icons">search</i>
-					</label>
-					<div class="mdl-textfield__expandable-holder">
-						<input class="mdl-textfield__input" type="text" name="sample" id="waterfall-exp">
+			<div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+				<div class="mdl-layout__header-row">
+					<span class="android-title mdl-layout-title">
+						<img class="android-logo-image" src="images/android-logo.png">
+					</span>
+					<!-- Add spacer, to align navigation to the right in desktop -->
+					<div class="android-header-spacer mdl-layout-spacer"></div>
+					<div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+						<label class="mdl-button mdl-js-button mdl-button--icon grande" for="search-field">
+							<i class="material-icons">search</i>
+						</label>
+						<div class="mdl-textfield__expandable-holder mdl-shadow--2dp">
+							<form action="../Control/busqueda.php" method="get" accept-charset="utf-8">
+								<input name="busqueda" class="mdl-textfield__input" type="text" id="search-field" autocomplete="off"	>
+							</form>
+						</div>
 					</div>
+					<!-- Navigation -->
+					<div class="android-navigation-container">
+						<nav class="android-navigation mdl-navigation">
+							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Ofertas</a>
+							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Lo mas nuevo</a>
+							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Contactanos</a>
+							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Inicia sesion</a>
+							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Registrate!</a>
+						</nav>
+					</div>
+					<span class="android-mobile-title mdl-layout-title">
+						<img class="android-logo-imagee" src="images/androiid-logo.png">
+					</span>
 				</div>
 			</div>
-			<!-- Header row to make an space
-			<div class="mdl-layout__header-row"></div>
-			<div class="mdl-layout__header-row"></div>-->
-			<!-- Bottom row, not visible on scroll -->
-			<div class="mdl-layout__header-row alto">
-				<div class="mdl-layout-spacer"></div>
-				<!-- Navigation -->
+
+			<div class="android-drawer mdl-layout__drawer">
+				<span class="mdl-layout-title">
+					<img class="android-logo-image" src="images/android-logo-white.png">
+				</span>
 				<nav class="mdl-navigation">
-					<a class="mdl-navigation__link" href="">
-						<label class="mdl-button mdl-js-button mdl-button--icon" for="waterfall-exp">
-							<i class="material-icons">shopping_cart</i>
-						</label>
-					</a>
-					<a class="mdl-navigation__link" href="">Ofertas</a>
-					<a class="mdl-navigation__link" href="">Productos</a>
-					<a class="mdl-navigation__link" href="">Inicia sesion</a>
-					<a class="mdl-navigation__link" href="">Registrate!</a>
+					<a class="mdl-navigation__link" href="">Phones</a>
+					<div class="android-drawer-separator"></div>
+					<span class="mdl-navigation__link" href="">Versions</span>
+					<a class="mdl-navigation__link" href="">Lollipop 5.0</a>
+					<div class="android-drawer-separator"></div>
+					<span class="mdl-navigation__link" href="">Resources</span>
+					<a class="mdl-navigation__link" href="">Android on Twitter</a>
+					<div class="android-drawer-separator"></div>
+					<span class="mdl-navigation__link" href="">For developers</span>
+					<a class="mdl-navigation__link" href="">Android SDK</a>
 				</nav>
 			</div>
-		</header>
-			<main class="mdl-layout__content">
-					<div class="mdl-grid">
-						<!-- Welcome card -->
-						<br>
-						<div class="mdl-layout-spacer"></div>
-						<div class="mdl-cell mdl-cell--4-col mdl-typography--text-center  demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col espacios">
-							<div class="mdl-card__title">
-								<h2 class="mdl-card__title-text">Welcome</h2>
-							</div>
-							<div class="mdl-card__supporting-text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-							</div>
-							<div class="mdl-card__actions mdl-card--border">
-								<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Get Started</a>
-							</div>
-							<div class="mdl-card__menu">
-								<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-									<i class="material-icons">share</i>
-								</button>
-							</div>
-						</div>
-						<br>
-						<div class="mdl-layout-spacer"></div>
-						<div class="mdl-cell mdl-cell--4-col mdl-typography--text-center  demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col espacios">
-							<div class="mdl-card__title">
-								<h2 class="mdl-card__title-text">Welcome</h2>
-							</div>
-							<div class="mdl-card__supporting-text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-							</div>
-							<div class="mdl-card__actions mdl-card--border">
-								<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Get Started</a>
-							</div>
-							<div class="mdl-card__menu">
-								<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-									<i class="material-icons">share</i>
-								</button>
-							</div>
-						</div>
-						<br>
-						<div class="mdl-layout-spacer"></div>
-						<div class="mdl-cell mdl-cell--4-col mdl-typography--text-center  demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col espacios">
-							<div class="mdl-card__title">
-								<h2 class="mdl-card__title-text">Welcome</h2>
-							</div>
-							<div class="mdl-card__supporting-text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-							</div>
-							<div class="mdl-card__actions mdl-card--border">
-								<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Get Started</a>
-							</div>
-							<div class="mdl-card__menu">
-								<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-									<i class="material-icons">share</i>
-								</button>
-							</div>
-						</div>
-						<br>
-						<div class="mdl-layout-spacer"></div>
-						<div class="mdl-cell mdl-cell--4-col mdl-typography--text-center  demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col espacios">
-							<div class="mdl-card__title">
-								<h2 class="mdl-card__title-text">Welcome</h2>
-							</div>
-							<div class="mdl-card__supporting-text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-							</div>
-							<div class="mdl-card__actions mdl-card--border">
-								<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Get Started</a>
-							</div>
-							<div class="mdl-card__menu">
-								<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-									<i class="material-icons">share</i>
-								</button>
-							</div>
-						</div>
-						<br>
-						<div class="mdl-layout-spacer"></div>
-						<div class="mdl-cell mdl-cell--4-col mdl-typography--text-center  demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col espacios">
-							<div class="mdl-card__title">
-								<h2 class="mdl-card__title-text">Welcome</h2>
-							</div>
-							<div class="mdl-card__supporting-text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-							</div>
-							<div class="mdl-card__actions mdl-card--border">
-								<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Get Started</a>
-							</div>
-							<div class="mdl-card__menu">
-								<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-									<i class="material-icons">share</i>
-								</button>
-							</div>
-						</div>
 
-						<br>
-						<div class="mdl-layout-spacer"></div>
-						<div class="mdl-cell mdl-cell--4-col mdl-typography--text-center  demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col espacios">
-							<div class="mdl-card__title">
-								<h2 class="mdl-card__title-text">Welcome</h2>
+			<div class="android-content mdl-layout__content">
+				<a name="top"></a>
+				<div class="android-be-together-section mdl-typography--text-center">
+					<div class="logo-font android-slogan">M C K</div>
+					<div class="logo-font android-sub-slogan">Esta es una pequeña descripcion de lo que hacemos aquí y tambien las cosas que nos gustan</div>
+					<div class="logo-font android-create-character">
+						<a href=""><img src="images/andy.png"> create your android character</a>
+					</div>
+
+					<a href="#screens">
+						<button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+							<i class="material-icons">expand_more</i>
+						</button>
+					</a>
+				</div>
+
+
+<div id="resultados">
+	
+</div>
+
+
+
+
+
+				<div class="mdl-layout android-screen-section mdl-typography--text-center">
+					<a name="screens"></a>
+					<!-- View cards -->
+					<div class="mdl-layout__content" name="screen">
+							<div class="mdl-grid elemento-centrado">
+								<!-- Welcome card -->
+								<br>
+								<div class="mdl-layout-spacer"></div>
+								<div class="mdl-cell mdl-cell--4-col mdl-typography--text-center demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col espacios">
+									<div class="mdl-card__title">
+										<h2 class="mdl-card__title-text">Welcome</h2>
+									</div>
+									<div class="mdl-card__supporting-text">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+									</div>
+									<div class="mdl-card__actions mdl-card--border">
+										<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Get Started</a>
+									</div>
+									<div class="mdl-card__menu">
+										<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+											<i class="material-icons">share</i>
+										</button>
+									</div>
+								</div>
+								<br>
+								<div class="mdl-layout-spacer"></div>
+								<div class="mdl-cell mdl-cell--4-col mdl-typography--text-center  demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col espacios">
+									<div class="mdl-card__title">
+										<h2 class="mdl-card__title-text">Welcome</h2>
+									</div>
+									<div class="mdl-card__supporting-text">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+									</div>
+									<div class="mdl-card__actions mdl-card--border">
+										<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Get Started</a>
+									</div>
+									<div class="mdl-card__menu">
+										<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+											<i class="material-icons">share</i>
+										</button>
+									</div>
+								</div>
+								<br>
+								<div class="mdl-layout-spacer"></div>
+								<div class="mdl-cell mdl-cell--4-col mdl-typography--text-center  demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col espacios">
+									<div class="mdl-card__title">
+										<h2 class="mdl-card__title-text">Welcome</h2>
+									</div>
+									<div class="mdl-card__supporting-text">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+									</div>
+									<div class="mdl-card__actions mdl-card--border">
+										<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Get Started</a>
+									</div>
+									<div class="mdl-card__menu">
+										<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+											<i class="material-icons">share</i>
+										</button>
+									</div>
+								</div>
+								<br>
+								<div class="mdl-layout-spacer"></div>
+								<div class="mdl-cell mdl-cell--4-col mdl-typography--text-center  demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col espacios">
+									<div class="mdl-card__title">
+										<h2 class="mdl-card__title-text">Welcome</h2>
+									</div>
+									<div class="mdl-card__supporting-text">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+									</div>
+									<div class="mdl-card__actions mdl-card--border">
+										<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Get Started</a>
+									</div>
+									<div class="mdl-card__menu">
+										<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+											<i class="material-icons">share</i>
+										</button>
+									</div>
+								</div>
+								<br>
+								<div class="mdl-layout-spacer"></div>
+								<div class="mdl-cell mdl-cell--4-col mdl-typography--text-center  demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col espacios">
+									<div class="mdl-card__title">
+										<h2 class="mdl-card__title-text">Welcome</h2>
+									</div>
+									<div class="mdl-card__supporting-text">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+									</div>
+									<div class="mdl-card__actions mdl-card--border">
+										<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Get Started</a>
+									</div>
+									<div class="mdl-card__menu">
+										<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+											<i class="material-icons">share</i>
+										</button>
+									</div>
+								</div>
+								<br>
+								<div class="mdl-layout-spacer"></div>
+								<div class="mdl-cell mdl-cell--4-col mdl-typography--text-center  demo-card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col espacios">
+									<div class="mdl-card__title">
+										<h2 class="mdl-card__title-text">Welcome</h2>
+									</div>
+									<div class="mdl-card__supporting-text">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+									</div>
+									<div class="mdl-card__actions mdl-card--border">
+										<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Get Started</a>
+									</div>
+									<div class="mdl-card__menu">
+										<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+											<i class="material-icons">share</i>
+										</button>
+									</div>
+								</div>
 							</div>
-							<div class="mdl-card__supporting-text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-							</div>
-							<div class="mdl-card__actions mdl-card--border">
-								<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Get Started</a>
-							</div>
-							<div class="mdl-card__menu">
-								<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-									<i class="material-icons">share</i>
-								</button>
-							</div>
+					</div>
+				</div>
+				<!-- Esta es otra seccion -->
+				<div class="android-customized-section">
+					<div class="android-customized-section-text">
+						<div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Customised by you, for you</div>
+						<p class="mdl-typography--font-light">
+							Put the stuff that you care about right on your home screen: the latest news, the weather or a stream of your recent photos.
+							<br>
+							<a href="" class="android-link mdl-typography--font-light">Customise your phone</a>
+						</p>
+					</div>
+					<div class="android-customized-section-image"></div>
+				</div>
+				<!-- Esta es otra seccion -->
+				<div class="android-more-section">
+					<div class="android-section-title mdl-typography--display-1-color-contrast">Mas sobre nosotros</div>
+					<div class="android-card-container mdl-grid">
+						<!-- Contenido -->
+					</div>
+				</div>
+				<!-- Footer section -->
+				<footer class="android-footer mdl-mega-footer">
+					<div class="mdl-mega-footer--top-section">
+						<div class="mdl-mega-footer--left-section">
+							<button class="mdl-mega-footer--social-btn"></button>
+							&nbsp;
+							<button class="mdl-mega-footer--social-btn"></button>
+							&nbsp;
+							<button class="mdl-mega-footer--social-btn"></button>
+						</div>
+						<div class="mdl-mega-footer--right-section">
+							<a class="mdl-typography--font-light" href="#top">
+								Back to Top
+								<i class="material-icons">expand_less</i>
+							</a>
 						</div>
 					</div>
-			</main>
+
+					<div class="mdl-mega-footer--middle-section">
+						<p class="mdl-typography--font-light">Satellite imagery: © 2014 Astrium, DigitalGlobe</p>
+						<p class="mdl-typography--font-light">Some features and devices may not be available in all areas</p>
+					</div>
+
+					<div class="mdl-mega-footer--bottom-section">
+						<a class="android-link android-link-menu mdl-typography--font-light" id="version-dropdown">
+							Versions
+							<i class="material-icons">arrow_drop_up</i>
+						</a>
+						<ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
+							<li class="mdl-menu__item">5.0 Lollipop</li>
+							<li class="mdl-menu__item">4.4 KitKat</li>
+							<li class="mdl-menu__item">4.3 Jelly Bean</li>
+							<li class="mdl-menu__item">Android History</li>
+						</ul>
+						<a class="android-link android-link-menu mdl-typography--font-light" id="developers-dropdown">
+							For Developers
+							<i class="material-icons">arrow_drop_up</i>
+						</a>
+						<ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="developers-dropdown">
+							<li class="mdl-menu__item">App developer resources</li>
+							<li class="mdl-menu__item">Android Open Source Project</li>
+							<li class="mdl-menu__item">Android SDK</li>
+							<li class="mdl-menu__item">Android for Work</li>
+						</ul>
+						<a class="android-link mdl-typography--font-light" href="">Blog</a>
+						<a class="android-link mdl-typography--font-light" href="">Privacy Policy</a>
+					</div>
+				</footer>
+			</div>
 		</div>
-		<a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/text-only/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
 		<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script>
+			function buscar() {
+				var textoBusqueda = $("#search-field").val();
+
+				if (textoBusqueda != "") {
+					$.post("buscar.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
+						$("#resultadoBusqueda").html(mensaje);
+					}); 
+				} else {
+					("#resultadoBusqueda").html('');
+				};
+			};
+		</script>
 	</body>
 </html>
