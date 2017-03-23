@@ -44,7 +44,7 @@
 						</label>
 						<div class="mdl-textfield__expandable-holder mdl-shadow--2dp">
 							<form action="../Control/busqueda.php" method="get" accept-charset="utf-8">
-								<input name="busqueda" class="mdl-textfield__input" type="text" id="search-field" autocomplete="off"	>
+								<input name="busqueda" class="mdl-textfield__input" type="text" id="search-field" autocomplete="off" onKeyUp="buscar();" maxlength="140"	>
 							</form>
 						</div>
 					</div>
@@ -99,9 +99,12 @@
 				</div>
 
 
-<div id="resultados">
-	
-</div>
+
+
+				<!-- Resultado de la busqueda con jquery -->
+				<div class="mdl-layout android-screen-section mdl-typography--text-center" id="resultadoBusqueda">
+					
+				</div>
 
 
 
@@ -296,15 +299,21 @@
 		<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script>
+		$(document).ready(function() {
+    		$("#resultadoBusqueda").html('<p>JQUERY VACIO</p>');
+    	});
+
 			function buscar() {
 				var textoBusqueda = $("#search-field").val();
 
 				if (textoBusqueda != "") {
-					$.post("buscar.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
+					$.post("Control/buscar.php", 
+						{valorBusqueda: textoBusqueda},
+						function(mensaje) {
 						$("#resultadoBusqueda").html(mensaje);
 					}); 
 				} else {
-					("#resultadoBusqueda").html('');
+					$("#resultadoBusqueda").html('<p>JQUERY VACIO</p>');
 				};
 			};
 		</script>
