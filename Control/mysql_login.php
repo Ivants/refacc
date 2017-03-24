@@ -5,12 +5,13 @@
  */
 define("HOSTNAME", "mysql.hostinger.mx");	//host
 //define("HOSTNAME", "localhost");			//host
-define("DATABASE", "u929355182_dbmt"); 		//base de datos
-define("USERNAME", "u929355182_ivan"); 		//usuario
-define("PASSWORD", "MiEquipo1.0"); 			//contraseña
+define("DATABASE", "u929355182_refac"); 		//base de datos
+define("USERNAME", "u929355182_refac"); 		//usuario
+define("PASSWORD", "refac123"); 			//contraseña
 
 
 
+/*
 	$host = 'mysql.hostinger.mx';
 	$db = 'u929355182_dbmt';
 	$user = 'u929355182_ivan';
@@ -25,7 +26,7 @@ define("PASSWORD", "MiEquipo1.0"); 			//contraseña
 
 
 
-
+*/
 
 
 

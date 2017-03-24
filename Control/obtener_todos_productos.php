@@ -5,7 +5,7 @@
 require 'Usuarios.php';
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Manejar petición GET
-    $alumnos = usuarios::getAll();
+    $alumnos = usuarios::getProducts();
     if ($alumnos) {
         $datos["estado"] = 1;
         $datos["alumnos"] = $alumnos;

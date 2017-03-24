@@ -43,7 +43,7 @@
 							<i class="material-icons">search</i>
 						</label>
 						<div class="mdl-textfield__expandable-holder mdl-shadow--2dp">
-							<form action="http://miequipoapp.esy.es/Control/buscar.php" method="get" accept-charset="utf-8">
+							<form action="Control/buscar.php" method="get" accept-charset="utf-8">
 								<input name="busqueda" class="mdl-textfield__input" type="text" id="search-field" autocomplete="off" onKeyUp="buscar();" maxlength="140"	>
 							</form>
 						</div>
@@ -307,7 +307,7 @@
 				var textoBusqueda = $("#search-field").val();
 
 				if (textoBusqueda != "") {
-					$.post("http://miequipoapp.esy.es/Control/buscar.php", 
+					$.post("Control/buscar.php", 
 						{valorBusqueda: textoBusqueda},
 						function(mensaje) {
 						$("#resultadoBusqueda").html(mensaje);

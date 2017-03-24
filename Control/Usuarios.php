@@ -16,7 +16,7 @@ class usuarios
 	 * @return array Datos del registro
 	 */
 	public static function getAll(){
-		$consulta = "SELECT * FROM usuarios";
+		$consulta = "SELECT * FROM PRODUCTOS";
 		try {
 			// Preparar sentencia
 			$comando = Database::getInstance()->getDb()->prepare($consulta);
@@ -27,6 +27,26 @@ class usuarios
 			return false;
 		}
 	}
+
+
+
+	/* Funcion de busqueda en toda la tabla de productos */
+	public static function getProducts(){
+		$consulta = "SELECT * FROM PRODUCTOS";
+		try {
+			// Preparar sentencia
+			$comando = Database::getInstance()->getDb()->prepare($consulta);
+			// Ejecutar sentencia preparada
+			$comando->execute();
+			return $comando->fetchAll(PDO::FETCH_ASSOC);
+		} catch (PDOException $e) {
+			return false;
+		}
+	}
+
+
+
+
 	/**
 	 * Retorna en la fila especificada de la tabla 'usuarios'
 	 *
