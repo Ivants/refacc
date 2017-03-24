@@ -3,7 +3,7 @@
  * Representa el la estructura de las usuarioss
  * almacenadas en la base de datos
  */
-require 'data_base.php';
+require 'Database.php';
 class usuarios
 {
 	function __construct()
