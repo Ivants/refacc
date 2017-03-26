@@ -52,8 +52,10 @@ a img{
 	right: 20%;
 	bottom: -26px;
 	z-index: 3;
+	/*
 	background: #64ffda !important;
 	color: black !important;
+	*/
 }
 
 .android-mobile-title {
@@ -175,7 +177,7 @@ a img{
 	height: 350px;
 	width: auto;
 	background-color: #f3f3f3;
-	background: url('../assets/2.jpg') center 30% no-repeat;
+	background: url('../assets/3.jpg') center 30% no-repeat;
 	background-size: cover;
 }
 

@@ -1,3 +1,14 @@
-.mck-background{ 
-	background: url('../assets/1.jpg') center !important;
+.espacio-info{
+	margin-right: 1em;
+}
+
+.tamanito{
+	height: 1.5em;
+	background-color: hsla(100,90%,70%,1);
+	margin-bottom: 2em;
+	color: black;
+	text-align: right;
+}
+.tamanito > .texto_tamanito{
+	font-size: 1.1em;
 }
