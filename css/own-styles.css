@@ -4,11 +4,17 @@
 
 .tamanito{
 	height: 1.5em;
-	background-color: hsla(100,90%,70%,1);
+	background-color: rgb(178,255,89);
 	margin-bottom: 2em;
 	color: black;
 	text-align: right;
 }
 .tamanito > .texto_tamanito{
 	font-size: 1.1em;
+}
+#resultadoBusqueda{
+	width: 100%;
+	text-align: center;
+	color: green;
+	animation-fill-mode: forwards;
 }
