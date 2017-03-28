@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="css/styles.css">
 		<link rel="stylesheet" type="text/css" href="css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="css/own-styles.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.css">
 		<!-- Scripts -->
 		<script type="text/javascript" src="js/modernizr-custom.js"></script>
 	</head>
@@ -49,11 +50,73 @@
 									<i class="material-icons">shopping_cart</i>
 								</label>
 							</a>
-							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Ofertas</a>
-							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Lo mas nuevo</a>
-							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Contactanos</a>
-							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Inicia sesion</a>
-							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Registrate!</a>
+							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="#">Ofertas</a>
+							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="#">Lo mas nuevo</a>
+							<a class="mdl-navigation__link mdl-typography--text-uppercase" href="#">Contactanos</a>
+							<a onclick="openNav1()" class="mdl-navigation__link mdl-typography--text-uppercase" href="#">Inicia sesion</a>
+							<!-- Formulario oculto Login -->
+							<div id="myNav1" class="animated overlay">
+								<!-- Button to close the overlay navigation -->
+								<a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+								<!-- Overlay content -->
+								<div id="overlay-content-id" class="animated overlay-content">
+									<!-- <a class="animated infinite tada">sdsdsd</a> -->
+									<div class="mdl-layout mdl-js-layout mdl-color--grey-100 formulariologin">
+										<h2 id="ejemploAnimado" class="animated">Iniciar sesion</h2>
+										<main class="mdl-layout__content">
+											<form action="#">
+												<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+													<input class="mdl-textfield__input" type="text" id="username" required/>
+													<label class="mdl-textfield__label" for="username">Username</label>
+												</div>
+												<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+													<input class="mdl-textfield__input" type="password" id="pass" required="" />
+													<label class="mdl-textfield__label" for="username">Password	</label>
+												</div>
+												<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Vamos!</button>
+											</form>
+										</main>
+									</div>
+								</div>
+							</div>
+							<!-- Registro -->
+
+
+				<!-- Formulario oculto Registro -->
+						<div id="myNav2" class="animated overlay">
+							<!-- Button to close the overlay navigation -->
+							<a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+							<!-- Overlay content -->
+							<div id="overlay-content-id2" class="animated overlay-content">
+								<!-- <a class="animated infinite tada">sdsdsd</a> -->
+								<div class="mdl-layout mdl-js-layout mdl-color--grey-100 formulariologin">
+									<h2 id="ejemploAnimado2" class="animated">Quiero registrarme!</h2>
+									<main class="mdl-layout__content">
+										<form action="#">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="text" id="username" required/>
+												<label class="mdl-textfield__label" for="username">Username</label>
+											</div>
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="text" id="email" required/>
+												<label class="mdl-textfield__label" for="username">Email</label>
+											</div>
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="password" id="pass" required="" />
+												<label class="mdl-textfield__label" for="username">Password	</label>
+											</div>
+											<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Quiero registrarme!</button>
+										</form>
+									</main>
+								</div>
+							</div>
+						</div>
+
+
+
+
+
+							<a onclick="openNav2()" class="mdl-navigation__link mdl-typography--text-uppercase" href="#">Registrate!</a>
 						</nav>
 					</div>
 					<span class="android-mobile-title mdl-layout-title">
@@ -266,9 +329,10 @@
 		<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script>
-		$(document).ready(function() {
-    		$("#resultadoBusqueda").html('<p>:3</p>');
-    	});
+			$(document).ready(function() {
+				$("#resultadoBusqueda").html('<p>:3</p>');
+			});
+
 
 			function buscar() {
 				var textoBusqueda = $("#search-field").val();
@@ -283,6 +347,36 @@
 					$("#resultadoBusqueda").html('<p>No encuentro nada</p>');
 				};
 			};
+
+
+			/* Open when someone clicks on the span element */
+			function openNav1() {
+				document.getElementById("myNav1").style.width = "100%";
+				document.getElementById("ejemploAnimado").classList.add('zoomIn');
+				document.getElementById("overlay-content-id").classList.add('zoomIn');
+				document.getElementById("myNav1").classList.add('zoomIn');
+			}
+			/* Close when someone clicks on the "x" symbol inside the overlay */
+			function closeNav1() {
+				document.getElementById("myNav1").style.width = "0%";
+
+			}
+
+
+			/* Open when someone clicks on the span element */
+			function openNav2() {
+				document.getElementById("myNav2").style.width = "100%";
+				document.getElementById("ejemploAnimado2").classList.add('zoomIn');
+				document.getElementById("overlay-content-id2").classList.add('zoomIn');
+				document.getElementById("myNav2").classList.add('zoomIn');
+			}
+			/* Close when someone clicks on the "x" symbol inside the overlay */
+			function closeNav2() {
+				document.getElementById("myNav2").style.width = "0%";
+
+			}
+
+
 		</script>
 	</body>
 </html>
