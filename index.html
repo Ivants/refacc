@@ -56,7 +56,6 @@
 							<a onclick="openNav1()" class="mdl-navigation__link mdl-typography--text-uppercase" href="#">Inicia sesion</a>
 							<!-- Formulario oculto Login -->
 							<div id="myNav1" class="animated overlay">
-								<!-- Button to close the overlay navigation -->
 								<a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
 								<!-- Overlay content -->
 								<div id="overlay-content-id" class="animated overlay-content">
@@ -64,16 +63,16 @@
 									<div class="mdl-layout mdl-js-layout mdl-color--grey-100 formulariologin">
 										<h2 id="ejemploAnimado" class="animated">Iniciar sesion</h2>
 										<main class="mdl-layout__content">
-											<form action="#">
+											<form action="Control/login.php" method="POST">
 												<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-													<input class="mdl-textfield__input" type="text" id="username" required/>
+													<input class="mdl-textfield__input" type="text" name="user" id="user" required/>
 													<label class="mdl-textfield__label" for="username">Username</label>
 												</div>
 												<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-													<input class="mdl-textfield__input" type="password" id="pass" required="" />
-													<label class="mdl-textfield__label" for="username">Password	</label>
+													<input class="mdl-textfield__input" type="password" name="password" id="password" required />
+													<label class="mdl-textfield__label" for="password	">Password	</label>
 												</div>
-												<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Vamos!</button>
+												<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Vamos!</button>
 											</form>
 										</main>
 									</div>
@@ -82,35 +81,35 @@
 							<!-- Registro -->
 
 
-				<!-- Formulario oculto Registro -->
-						<div id="myNav2" class="animated overlay">
-							<!-- Button to close the overlay navigation -->
-							<a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
-							<!-- Overlay content -->
-							<div id="overlay-content-id2" class="animated overlay-content">
-								<!-- <a class="animated infinite tada">sdsdsd</a> -->
-								<div class="mdl-layout mdl-js-layout mdl-color--grey-100 formulariologin">
-									<h2 id="ejemploAnimado2" class="animated">Quiero registrarme!</h2>
-									<main class="mdl-layout__content">
-										<form action="#">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" id="username" required/>
-												<label class="mdl-textfield__label" for="username">Username</label>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" id="email" required/>
-												<label class="mdl-textfield__label" for="username">Email</label>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="password" id="pass" required="" />
-												<label class="mdl-textfield__label" for="username">Password	</label>
-											</div>
-											<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Quiero registrarme!</button>
-										</form>
-									</main>
+							<!-- Formulario oculto Registro -->
+							<div id="myNav2" class="animated overlay">
+								<!-- Button to close the overlay navigation -->
+								<a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+								<!-- Overlay content -->
+								<div id="overlay-content-id2" class="animated overlay-content">
+									<!-- <a class="animated infinite tada">sdsdsd</a> -->
+									<div class="mdl-layout mdl-js-layout mdl-color--grey-100 formulariologin">
+										<h2 id="ejemploAnimado2" class="animated">Quiero registrarme!</h2>
+										<main class="mdl-layout__content">
+											<form action="#">
+												<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+													<input class="mdl-textfield__input" type="text" id="username" required/>
+													<label class="mdl-textfield__label" for="username">Username</label>
+												</div>
+												<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+													<input class="mdl-textfield__input" type="text" id="email" required/>
+													<label class="mdl-textfield__label" for="username">Email</label>
+												</div>
+												<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+													<input class="mdl-textfield__input" type="password" id="pass" required="" />
+													<label class="mdl-textfield__label" for="username">Password	</label>
+												</div>
+												<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Quiero registrarme!</button>
+											</form>
+										</main>
+									</div>
 								</div>
 							</div>
-						</div>
 
 
 

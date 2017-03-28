@@ -62,6 +62,7 @@ CREATE TABLE Estandar (
 	INSERT INTO Estandar VALUES (NULL,3,12, 'Instituto iberia', 'Somos una buena escuela donde...',2457865,'42 norte','7:00','Puebla','www.esu.com');
 	INSERT INTO Estandar VALUES (NULL,1,10, 'Abarrotes AC', 'Somos una tienda donde...',777775,'32 oriente','4:00','Tijuana','www.nnn.com');
 
+-- Tabla de usuarios
 	CREATE TABLE usuarios (
 		usuario varchar(30) PRIMARY KEY NOT NULL,
 		clave varchar(128) NOT NULL,
