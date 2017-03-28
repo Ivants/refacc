@@ -19,7 +19,7 @@ CREATE TABLE SubTipo (
   Tipo_idTipo INTEGER   ,
   Subtipo VARCHAR(20)      ,
   FOREIGN KEY(Tipo_idTipo)
-    REFERENCES Tipo(idTipo));
+	REFERENCES Tipo(idTipo));
 	
 
 	-- Subtipos del tipo industrial
@@ -38,7 +38,7 @@ CREATE TABLE SubTipo (
 	INSERT INTO SubTipo VALUES (NULL,3,'Servicios prof.');
 	INSERT INTO SubTipo VALUES (NULL,3,'Educacion');
 	INSERT INTO SubTipo VALUES (NULL,3,'Comunicacion');
-    INSERT INTO SubTipo VALUES (NULL,3,'Salud');
+	INSERT INTO SubTipo VALUES (NULL,3,'Salud');
 
 
 -- Se crea la tabla estandar que todos los usuarios tendran en un principo para despues agregar más tablas de acuerdo a sus necesidades
@@ -54,21 +54,40 @@ CREATE TABLE Estandar (
   Estado VARCHAR(45)    ,
   SitioWeb VARCHAR(45)      ,
   FOREIGN KEY(SubTipo_idSubTipo)
-    REFERENCES SubTipo(idSubTipo),
+	REFERENCES SubTipo(idSubTipo),
   FOREIGN KEY(Tipo_idTipo)
-    REFERENCES Tipo(idTipo));
+	REFERENCES Tipo(idTipo));
 	
 	-- Agregamos 2 empresas, una del sector servicio-->Eduaccion y otra del sector comercial--
 	INSERT INTO Estandar VALUES (NULL,3,12, 'Instituto iberia', 'Somos una buena escuela donde...',2457865,'42 norte','7:00','Puebla','www.esu.com');
 	INSERT INTO Estandar VALUES (NULL,1,10, 'Abarrotes AC', 'Somos una tienda donde...',777775,'32 oriente','4:00','Tijuana','www.nnn.com');
 
-	
-	   -- Se visualizan los datos, cada empresa con su tipo de giro empresarial
-	   
-	   SELECT Tipo.Tipo, SubTipo.Subtipo, Estandar.NombreEmpresa
-       FROM Tipo
-       INNER JOIN SubTipo
-       on SubTipo.Tipo_idTipo = Tipo.idTipo
-       INNER JOIN Estandar 
-       on Estandar.SubTipo_idSubTipo = SubTipo.idSubTipo
-	   
+	CREATE TABLE usuarios (
+		usuario varchar(30) PRIMARY KEY NOT NULL,
+		clave varchar(128) NOT NULL,
+		nombre varchar(35) NOT NULL,
+		correo varchar(50) NOT NULL,
+		admin boolean NOT NULL DEFAULT 0
+	);
+
+	-- Administradores
+	INSERT INTO `usuarios` (`usuario`, `clave`, `nombre`,`correo`,`admin`) VALUES ('ivan', '123', 'ivan', 'correo@correo.com', 1);
+	INSERT INTO `usuarios` (`usuario`, `clave`, `nombre`,`correo`,`admin`) VALUES ('miguel', '123', 'miguel', 'correo@correo.com', 1);
+	INSERT INTO `usuarios` (`usuario`, `clave`, `nombre`,`correo`,`admin`) VALUES ('victor', '123', 'victor', 'correo@correo.com', 1);
+	INSERT INTO `usuarios` (`usuario`, `clave`, `nombre`,`correo`,`admin`) VALUES ('hector', '123', 'hector', 'correo@correo.com', 1);
+
+	-- Usuarios mortales y normales
+	INSERT INTO `usuarios` (`usuario`, `clave`, `nombre`,`correo`,`admin`) VALUES ('nancy', '123', 'nancy', 'correo@correo.com', 0);
+	INSERT INTO `usuarios` (`usuario`, `clave`, `nombre`,`correo`,`admin`) VALUES ('esteff', '123', 'esteff', 'correo@correo.com', 0);
+	INSERT INTO `usuarios` (`usuario`, `clave`, `nombre`,`correo`,`admin`) VALUES ('joce', '123', 'joce', 'correo@correo.com', 0);
+	INSERT INTO `usuarios` (`usuario`, `clave`, `nombre`,`correo`,`admin`) VALUES ('mariano', '123', 'mariano', 'correo@correo.com', 0);
+
+
+	-- Se visualizan los datos, cada empresa con su tipo de giro empresarial
+
+	SELECT Tipo.Tipo, SubTipo.Subtipo, Estandar.NombreEmpresa
+	FROM Tipo
+	INNER JOIN SubTipo
+	on SubTipo.Tipo_idTipo = Tipo.idTipo
+	INNER JOIN Estandar 
+	on Estandar.SubTipo_idSubTipo = SubTipo.idSubTipo
