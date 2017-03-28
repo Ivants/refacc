@@ -12,7 +12,6 @@
 </head>
 <body>
 	<h1>Este es el panel del administrador para</h1>
-}
 	
 </body>
 </html>

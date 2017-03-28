@@ -3,9 +3,11 @@
 
 	$usuario = $_POST['user'];
 	$pass = $_POST['password'];
-
+	/*
 	echo "el usuario es ".$usuario;
+	echo "<br><br>";
 	echo "la contraseña del usuario ". $usuario . " es ".$pass;
+	*/
 
 	conectar();
 
@@ -21,6 +23,7 @@
 ?>
 
 <script>
+	alert('Los datos ingresados son incorrectos')
 	location.href = "../index.html";
 </script>
 

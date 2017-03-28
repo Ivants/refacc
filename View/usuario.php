@@ -1,11 +1,8 @@
 <?php 
-	require '../controller/funciones.php';
+	require '../Control/funciones.php';
 	if(!haIniciadoSesion()){
 		header('Location: ../index.php');
-	}
-	conectar();
-	$categorias = getCategoriasPorUser();
-	desconectar();
+	}	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +12,6 @@
 </head>
 <body>
 	<h1>Este es el panel del usuario</h1>
-}
 	
 </body>
 </html>
