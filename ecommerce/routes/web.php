@@ -10,7 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/* Sustituimos la nueva vista por el welcome laravel que viene por defecto
+Route::get('/', function () {
+    return view('welcome');
+});
+*/
+//Route::get('/', 'MainController@home');
 Route::get('/', function () {
     return view('welcome');
 });

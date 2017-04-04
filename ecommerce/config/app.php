@@ -11,8 +11,9 @@ return [
     | framework needs to place the application's name in a notification or
     | any other location as required by the application or its packages.
     */
-
-    'name' => 'Laravel',
+   
+    //Este es el nombre de la aplicacion, sustituye todo eso que esta en la variable name
+    'name' => 'Mck',
 
     /*
     |--------------------------------------------------------------------------

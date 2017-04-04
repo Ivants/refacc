@@ -8,13 +8,13 @@
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
-	<title>{{ config('app.name', 'Laravel') }}</title>
+	<title>{{ config('app.name', 'Mck') }}</title>
 
 	<!-- Styles -->
-	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url('/css/app.css') }}" >
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/ripples.min.css">
 
 	<!-- Scripts -->
 	<script>
@@ -39,7 +39,7 @@
 
 					<!-- Branding Image -->
 					<a class="navbar-brand" href="{{ url('/') }}">
-						{{ config('app.name', 'Laravel') }}
+						{{ config('app.name', 'Mck') }}
 					</a>
 				</div>
 
@@ -56,38 +56,37 @@
 							<li><a href="{{ route('login') }}">Login</a></li>
 							<li><a href="{{ route('register') }}">Register</a></li>
 						@else
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-									{{ Auth::user()->name }} <span class="caret"></span>
+							<li>
+								<a href="{{ route('logout') }}"
+									onclick="event.preventDefault();
+											 document.getElementById('logout-form').submit();">
+									Cerrar sesion
 								</a>
 
-								<ul class="dropdown-menu" role="menu">
-									<li>
-										<a href="{{ route('logout') }}"
-											onclick="event.preventDefault();
-													 document.getElementById('logout-form').submit();">
-											Logout
-										</a>
-
-										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-											{{ csrf_field() }}
-										</form>
-									</li>
-									<li>
-										<a href="#" onclick="">Métodos de pago</a>
-									</li>
-								</ul>
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+									{{ csrf_field() }}
+								</form>
 							</li>
 						@endif
 					</ul>
 				</div>
 			</div>
 		</nav>
-
+		<!-- Aquí va el contenido de app
+			Las vistas que quieran permanecer a esta parte de la seccion de html deben de 
+			coincidor con el nombre de content para que este coincida con el @section('content') 
+		-->
 		@yield('content')
 	</div>
 
 	<!-- Scripts -->
 	<script src="{{ asset('js/app.js') }}"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/js/material.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/js/ripples.js"></script>
+	<script>
+		$.material.init();
+	</script>
 </body>
 </html>
