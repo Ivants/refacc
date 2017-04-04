@@ -3,7 +3,8 @@
 
 	function conectar(){
 		global $conexion;
-		$conexion =  mysqli_connect('localhost','root','UniX-21-21','erp');
+		$conexion =  mysqli_connect('localhost','root','UniX-21-21','erp');//LOCAL
+		//$conexion =  mysqli_connect('mysql.hostinger.mx','u929355182_refac','refac123','u929355182_refac');//EN LINEA
 		if (mysqli_connect_errno()){
 			//echo "Error en la conexión: " . mysqli_connect_error();
 		} else{

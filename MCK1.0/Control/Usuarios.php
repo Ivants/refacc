@@ -32,7 +32,7 @@ class usuarios
 
 	/* Funcion de busqueda en toda la tabla de productos */
 	public static function getProducts(){
-		$consulta = "SELECT * FROM PRODUCTOS";
+		$consulta = "SELECT * FROM producto";
 		try {
 			// Preparar sentencia
 			$comando = Database::getInstance()->getDb()->prepare($consulta);
