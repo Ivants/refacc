@@ -27,3 +27,15 @@ Route::get('/home', 'HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+/*
+	GET /products => index
+	POST /products => Store
+	GET /products/create => formulario para crear
+
+	GET /products:id => mostrar un productos con id
+	GET /products/:id/edit => formulario de edicion
+	PUT/PATCH /products/:id
+	DELETE /products/:id
+ */
+Route::resource('products','ProductsController');

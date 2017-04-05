@@ -15,16 +15,17 @@ class CreateProductsTable extends Migration
     public function up()
     {
         //Realizar cambios
-        Schema::create('productos',function(Blueprint $tabla){
+        Schema::create('products',function(Blueprint $tabla){
             $tabla->increments("id");
             //Este campo tiene relacion con la tabla de usuarios para saber quien creo el producto
+            //Este sera la llave primaria
             $tabla->integer('user_id')->unsigned()->index();
             $tabla->string('title');
             $tabla->text('descripcion');
-            $tabla->decimal('precio'); //Centavos
+            $tabla->decimal('precio',9,2); //Centavos, precision, decimales, 7 numeros con 2 decimales
 
             
-            //crea los campos de registro y ultima actualizacion
+            //crea los campos de creacion y ultima actualizacion
             $tabla->timestamps();
 
         });
@@ -38,5 +39,7 @@ class CreateProductsTable extends Migration
     public function down()
     {
         //Revertir cambios
+        //php artisan migrate:rollback  <- para deshacer la tabla que hicimos
+        Schema::drop('products');
     }
 }
