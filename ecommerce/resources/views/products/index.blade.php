@@ -20,12 +20,19 @@
 					<tr>
 						<td>{{$product->id}}</td>
 						<td>{{$product->title}}</td>
-						<td>{{$product->descripcion}}</td>
-						<td>{{$product->precio}}</td>
-						<td>Acciones</td>
+						<td>{{$product->description}}</td>
+						<td>{{$product->pricing}}</td>
+						<td>
+							<a href="{{url('products/'.$product->id.'/edit')}}">Editar</a>
+						</td>
 					</tr>
 				@endforeach
 			</tbody>
 		</table>
+	</div>
+	<div class="floating">
+		<a href="{{url('/products/create')}}" class="btn btn-primary btn-fab">
+			<i class="material-icons medium-text">add</i>
+		</a>
 	</div>
 @endsection

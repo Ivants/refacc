@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 //Importamos el modelo que acabamos de crear
 use App\Product;
+//Clase encargada de obtener al usuario mediante la fahada
+use Illuminate\Support\Facades\Auth;
 
 class ProductsController extends Controller
 {
@@ -28,7 +30,8 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        $product = new Product;
+        return view("products.create",["product" => $product]);
     }
 
     /**
@@ -39,7 +42,17 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product;
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->pricing = $request->pricing;
+        $product->user_id = Auth::user()->id;
+
+        if($product->save()){
+            return redirect("/products");
+        }else{
+            return view("products.create",["product" => $product]);
+        }
     }
 
     /**
@@ -61,7 +74,8 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        return view("products.edit",["product" => $product]);
     }
 
     /**

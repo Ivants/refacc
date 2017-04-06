@@ -21,8 +21,8 @@ class CreateProductsTable extends Migration
             //Este sera la llave primaria
             $tabla->integer('user_id')->unsigned()->index();
             $tabla->string('title');
-            $tabla->text('descripcion');
-            $tabla->decimal('precio',9,2); //Centavos, precision, decimales, 7 numeros con 2 decimales
+            $tabla->text('description');
+            $tabla->decimal('pricing',9,2); //Centavos, precision, decimales, 7 numeros con 2 decimales
 
             
             //crea los campos de creacion y ultima actualizacion
