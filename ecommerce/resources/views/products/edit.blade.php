@@ -2,8 +2,8 @@
 
 @section("content")
 	<div class="container white">
-		<h1>Nuevo producto</h1>
+		<h1>Editar producto</h1>
 		<!-- Formulario -->
-		@include('products.form',['product' => $product, 'url' => '/products'.$product->id, 'method' => 'PATCH' ]);
+		@include('products.form',['product' => $product, 'url' => '/products/'.$product->id, 'method' => 'PATCH']);
 	</div>
 @endsection
