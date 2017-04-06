@@ -170,6 +170,8 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         //Proveedor que agregue para el formulario de productos
         Collective\Html\HtmlServiceProvider::class,
+        //Provedor del carrito de compras
+        App\Providers\ShoppingCartProvider::class,
 
         /*
          * Application Service Providers...

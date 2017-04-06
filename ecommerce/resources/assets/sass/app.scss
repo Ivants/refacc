@@ -55,6 +55,10 @@
 }
 
 
+.absolute{
+	position: absolute;
+}
+
 .floating{
 	position: fixed;
 	bottom: 2em;
@@ -76,10 +80,19 @@
 	padding: 1em !important;
 	position: relative !important;
 
-	.h1{
-		padding-bottom: 10px !important;
+	h1{
+		padding-bottom: 10px;
 		border-bottom: solid 1px !important;
 
 	}
 
+	.actions{
+		right: 1em;
+		top: 10px;
+	}
+
+}
+
+.abajo{
+	margin-top: 2em;
 }
