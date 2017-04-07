@@ -62,6 +62,10 @@
 							</a>
 
 						</li>
+						<li>
+							<a href="{{url('/products')}}">Productos</a>
+
+						</li>
 						<!-- Authentication Links -->
 						@if (Auth::guest())
 							<li>

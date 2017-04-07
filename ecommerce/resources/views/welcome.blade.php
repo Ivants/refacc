@@ -88,7 +88,7 @@
 
 				<div class="links">
 					<a href="#">Quienes somos</a>
-					<!-- <a href="{{url('/products')}}">Productos</a>-->
+					<a href="{{url('/products')}}">Productos</a>
 					<a href="#">Bolsa de trabajo</a>
 				</div>
 			</div>
