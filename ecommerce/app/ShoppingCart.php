@@ -11,6 +11,7 @@ class ShoppingCart extends Model
 	//de el elemento status y modificarlo en create
 	protected $fillable = ["status"];
 
+    //Devuelve los productos que tenemos en el carrito 
 	public function productsSize(){
 		return $this->id;
 	}
@@ -22,7 +23,8 @@ class ShoppingCart extends Model
     		return ShoppingCart::findBySession($shopping_cart_id);
     	}else{
     		//Como no existe creamos el carrito
-    		return ShoppingCart::createWithoutSession($shopping_cart_id);
+            //return ShoppingCart::createWithoutSession($shopping_cart_id);
+    	   return ShoppingCart::createWithoutSession();
     	}
 
     }
