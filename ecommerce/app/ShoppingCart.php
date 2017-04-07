@@ -9,11 +9,29 @@ class ShoppingCart extends Model
 	//Campos llamados Mass assignment
 	//Este arreglo permite usar el parametro de create, si no existiera no podemos hacer uso
 	//de el elemento status y modificarlo en create
-	protected $fillable = ["status"];
+	protected $fillable = ['status'];
+
+    public function inShoppingCarts(){
+        return $this->hasMany('App\InShoppingCart');
+    }
+
+    public function products(){
+        //Clase con la que estamos haciendo la relacion
+        return $this->belongsToMany('App\Product','in_shopping_carts');
+    }
 
 	public function productsSize(){
-		return $this->id;
+		return $this->products()->count();
 	}
+
+    public function total(){
+        //Hacemos el join de los productos y sumamos todos
+        return $this->products()->sum("pricing");
+    }
+
+    public function totalUSD(){
+        return $this->products()->sum("pricing") / 100;
+    }
 
     //El comando 'php artisan make:model ShoppingCart -m' crea el modelo y la migracion al mismo tiempo
     public static function findOrCreateBySessionID($shopping_cart_id){

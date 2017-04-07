@@ -55,7 +55,7 @@
 					<!-- Right Side Of Navbar -->
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							<a href="#">Mi carrito
+							<a href="{{url('/carrito')}}">Mi carrito
 								<span class="circle-shopping-cart">
 									{{$shopping_cart->productsSize()}}
 								</span>								

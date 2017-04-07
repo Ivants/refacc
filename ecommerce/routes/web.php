@@ -15,7 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-Route::get('/', 'MainController@home');
+//Route::get('/', 'MainController@home');
+Route::get('/', function () {
+    return view('welcome');
+});
+
+//Ruta individual
+Route::get('/carrito', 'ShoppingCartsController@index');
 
 Auth::routes();
 
@@ -36,3 +42,9 @@ Route::get('/home', 'HomeController@index');
 	DELETE /products/:id
  */
 Route::resource('products','ProductsController');
+
+/*
+	POST /products => Store
+	DELETE /products/:id
+ */
+Route::resource('in_shopping_carts','InShoppingCartsController',['only' => ['store','destroy']]);
