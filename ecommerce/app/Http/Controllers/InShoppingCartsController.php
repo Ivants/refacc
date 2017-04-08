@@ -42,6 +42,8 @@ class InShoppingCartsController extends Controller
 	 */
 	public function destroy($id)
 	{
-		//
+		InShoppingCart::destroy($id);
+
+		return redirect('/carrito');
 	}
 }

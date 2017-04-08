@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Product;
 //Clase encargada de obtener al usuario mediante la fahada
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
@@ -109,6 +110,10 @@ class ProductsController extends Controller
 	 */
 	public function destroy($id)
 	{
+
+		// returns all data with an $id
+		//$users = DB::select('delete * from in_shopping_carts where user = ?', [1]);
+
 		Product::destroy($id);
 
 		return redirect('/products');

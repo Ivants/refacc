@@ -69,10 +69,10 @@
 						<!-- Authentication Links -->
 						@if (Auth::guest())
 							<li>
-								<a href="{{ route('login') }}">Login</a>
+								<a href="{{ route('login') }}">Iniciar Sesion</a>
 							</li>
 							<li>
-								<a href="{{ route('register') }}">Register</a>
+								<a href="{{ route('register') }}">Registrarse</a>
 							</li>
 						@else
 							<li>
