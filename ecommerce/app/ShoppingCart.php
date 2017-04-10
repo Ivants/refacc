@@ -30,7 +30,11 @@ class ShoppingCart extends Model
     }
 
     public function totalUSD(){
-        return $this->products()->sum("pricing") / 100;
+        //API REST paypal solo permite el cobro en dolar
+        //Se debe hacer la conversion
+        //Aquí le voy a poner una variable desde un input en html para insertar
+        //las subidas y bajadas del dolar
+        return $this->products()->sum("pricing") / 19.16;
     }
 
     //El comando 'php artisan make:model ShoppingCart -m' crea el modelo y la migracion al mismo tiempo

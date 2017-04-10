@@ -57,7 +57,7 @@
 						<li>
 							<a href="{{url('/carrito')}}">Mi carrito
 								<span class="circle-shopping-cart">
-									{{$shopping_cart->productsSize()}}
+									{{$productsCount}}
 								</span>								
 							</a>
 
