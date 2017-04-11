@@ -18,8 +18,7 @@ class ShoppingCartsController extends Controller
 		$paypal = new PayPal($shopping_cart);
 		$payment = $paypal->generate();
 
-		//return redirect($payment->getApprovalLink());
-		return redirect();	
+		return redirect($payment->getApprovalLink());
 
 		//Obtenemos los productos que estan en el carrito
 		// $products = $shopping_cart->products()->get();

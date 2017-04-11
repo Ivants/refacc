@@ -13,7 +13,7 @@ class Product extends Model
 							->setDescription($this->description)
 							->setCurrency('USD')
 							->setQuantity(1)
-							->setPrice($this->pricing/19.16);
+							->setPrice($this->pricing);
 
 	}
 }

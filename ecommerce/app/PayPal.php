@@ -36,6 +36,7 @@ class PayPal{
 	try{
 		$payment->create($this->_apiContext);
 	} catch(\Exception $ex){
+		//Helper dd de laravel
 		dd($ex);
 		exit(1);
 	}
@@ -53,7 +54,7 @@ class PayPal{
 	public function redirectURLs(){
 		// Returns transaction's info
 		//	$baseURL = url('/');
-		$baseURL = url('url');
+		$baseURL = url('/');
 		return \PaypalPayment::redirectUrls()
 							->setReturnUrl("$baseURL/payments/store")
 							->setCancelUrl("$baseURL/carrito");
