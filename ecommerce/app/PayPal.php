@@ -79,9 +79,7 @@ class PayPal{
 
 	public function items(){
 		$items = [];
-
 		$products = $this->shopping_cart->products()->get();
-
 		foreach ($products as $product) {
 			array_push($items, $product->paypalItem());
 		}
@@ -90,14 +88,30 @@ class PayPal{
 	}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 	
-	public function execute($paymentId,$payerId){
+	public function execute($paymentId, $payerId){
+
+		//_apiContext son los permisos
 		$payment = \PaypalPayment::getById($paymentId,$this->_apiContext);
 
+		//Id del comprador
 		$execution = \PaypalPayment::PaymentExecution()
 							->setPayerId($payerId);
 
-		return $payment->execute($execution,$this->_apiContext);
+		//dd($payment->execute($execution,$this->_apiContext));
+		dd($payment->execute($execution,$this->_apiContext));
 	}
 
 
