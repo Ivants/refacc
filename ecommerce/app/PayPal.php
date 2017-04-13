@@ -18,8 +18,6 @@ class PayPal{
 		$this->_apiContext->setConfig($flatConfig);
 
 		$this->shopping_cart = $shopping_cart;
-
-
 	}
 
 
@@ -45,11 +43,13 @@ class PayPal{
 
 	}
 
+
 	public function payer(){
 		//Regresa la iformacion de pago del usuario
 		return \PaypalPayment::payer()
 							->setPaymentMethod('paypal');
 	}
+
 
 	public function redirectURLs(){
 		// Returns transaction's info
@@ -77,6 +77,7 @@ class PayPal{
 							->setTotal($this->shopping_cart->totalUSD());
 	}
 
+
 	public function items(){
 		$items = [];
 		$products = $this->shopping_cart->products()->get();
@@ -86,18 +87,6 @@ class PayPal{
 
 		return \PaypalPayment::itemList()->setItems($items);
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	
@@ -113,9 +102,6 @@ class PayPal{
 		//dd($payment->execute($execution,$this->_apiContext));
 		dd($payment->execute($execution,$this->_apiContext));
 	}
-
-
-
 }
 
 ?>
