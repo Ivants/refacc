@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 //Ruta individual
 Route::get('/carrito', 'ShoppingCartsController@index');
-Route::get('/payments/store', 'PaymentsController@store');
+Route::get('/payments/store','PaymentsController@store');
 
 Auth::routes();
 
