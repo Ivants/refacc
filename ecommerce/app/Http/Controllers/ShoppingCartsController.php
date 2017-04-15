@@ -11,7 +11,7 @@ class ShoppingCartsController extends Controller
 {
     public function index(){
 
-		$shopping_cart_id = \Session::get("shopping_cart_id");
+		$shopping_cart_id = \Session::get('shopping_cart_id');
 		$shopping_cart = ShoppingCart::findOrCreateBySessionID($shopping_cart_id);
 
 		//Espera nuestro carrito de compras
@@ -25,6 +25,6 @@ class ShoppingCartsController extends Controller
 
 		// $total = $shopping_cart->total();
 
-		// return view("shopping_carts.index",["products" => $products, "total" => $total]);
+		// return view('shopping_carts.index',['products' => $products, 'total' => $total]);
     }
 }

@@ -28,6 +28,7 @@ class CreateOrdersTable extends Migration
 			$table->string("status")->default("creado");
 			$table->string("guide_number")->nullable(true);
 			$table->integer("total");
+			
 			$table->timestamps();
 		});
 	}

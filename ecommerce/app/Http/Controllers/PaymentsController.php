@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ShoppingCart;
 use App\PayPal;
+use App\Order;
 
 
 class PaymentsController extends Controller{
@@ -14,7 +15,18 @@ class PaymentsController extends Controller{
 		$shopping_cart = ShoppingCart::findOrCreateBySessionID($shopping_cart_id);
 
 		$paypal =  new PayPal($shopping_cart);
-		dd($paypal->execute($request->paymentId,$request->PayerID));
+		$response = $paypal->execute($request->paymentId,$request->PayerID);
+
+		if ($response->state = 'approved') {
+			$order = Order::createFromPayPalResponse($response,$shopping_cart);
+			$shopping_cart->approve();
+		}
+
+		//Encriptamos el shopping_cart
+		
+
+		//dd($order);
+		return view('shopping_carts.completed',['shopping_cart' => $shopping_cart, 'order' => $order]);
 
     }
 }
