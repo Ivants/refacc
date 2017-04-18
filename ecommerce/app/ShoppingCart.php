@@ -18,7 +18,7 @@ class ShoppingCart extends Model
 
 	public function generateCustomID(){
 		//No es recomendabble para contraseña
-		return md5('$this->id $this->update_at');
+		return md5($this->id.$this->update_at);
 	}
 
 
@@ -34,10 +34,17 @@ class ShoppingCart extends Model
 		return $this->hasMany('App\InShoppingCart');
 	}
 
+
 	public function products(){
 		//Clase con la que estamos haciendo la relacion
 		return $this->belongsToMany('App\Product','in_shopping_carts');
 	}
+
+
+	public function order(){
+		return $this->hasOne('App\Order')->first();
+	}
+
 
 	public function productsSize(){
 		return $this->products()->count();
@@ -47,6 +54,7 @@ class ShoppingCart extends Model
 		//Hacemos el join de los productos y sumamos todos
 		return $this->products()->sum("pricing");
 	}
+
 
 	public function totalUSD(){
 		//API REST paypal solo permite el cobro en dolar

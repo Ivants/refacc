@@ -49,3 +49,4 @@ Route::resource('products','ProductsController');
 	DELETE /products/:id
  */
 Route::resource('in_shopping_carts','InShoppingCartsController',['only' => ['store','destroy']]);
+Route::resource('compras','ShoppingCartsController',['only' => ['show']]);

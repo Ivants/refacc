@@ -18,6 +18,8 @@ class PaymentsController extends Controller{
 		$response = $paypal->execute($request->paymentId,$request->PayerID);
 
 		if ($response->state = 'approved') {
+			//Eliminamos la sesion del carrito de compras despues del cobro satisfactorio
+			\Session::remove('shopping_cart_id');
 			$order = Order::createFromPayPalResponse($response,$shopping_cart);
 			$shopping_cart->approve();
 		}
