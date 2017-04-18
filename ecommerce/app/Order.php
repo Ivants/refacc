@@ -18,6 +18,7 @@ class Order extends Model{
 		return $query->orderBy('id', 'desc');
 	}
 
+
 	public function scopeMonthly($query){
 		return $query->whereMonth('created_at','=',date('m'));
 	}
@@ -28,6 +29,15 @@ class Order extends Model{
 	}
 
 
+	public static function totalMonth(){
+		//Dividimos entre 100 para obtener el valor real de lo que hemos ganado
+		return Order::monthly()->sum('total')/100;
+	}
+
+
+	public static function totalMonthCount(){
+		return Order::monthly()->count();
+	}
 
 	public static function createFromPayPalResponse($response,$shopping_cart){
 

@@ -16,7 +16,11 @@ class OrdersController extends Controller
 		//El metodo latest es un metodo llamad scope 
 		//note: investigars
 		$orders = Order::latest()->get();
-		return view('orders.index',['orders' => $orders]);
+
+		$totalMonth = Order::totalMonth();
+		$totalMonthCount = Order::totalMonthCount();
+
+		return view('orders.index',['orders' => $orders, 'totalMonth' => $totalMonth, 'totalMonthCount' => $totalMonthCount]);
 	}
 
 	/**
