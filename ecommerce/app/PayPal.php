@@ -96,7 +96,8 @@ class PayPal{
 		$payment = \PaypalPayment::getById($paymentId,$this->_apiContext);
 
 		//Id del comprador
-		$execution = \PaypalPayment::PaymentExecution()->setPayerId($payerId);
+		$execution = \PaypalPayment::PaymentExecution()
+							->setPayerId($payerId);
 
 		//dd($payment->execute($execution,$this->_apiContext));
 		return $payment->execute($execution,$this->_apiContext);
