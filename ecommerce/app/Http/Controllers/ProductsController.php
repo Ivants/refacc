@@ -11,6 +11,14 @@ use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
+
+	public function __construct(){
+		//Sin sesion puedo ver los productos con detalle
+		//pero no la lista de productos
+		$this->middleware("auth",['except'=>'show']);
+	}
+
+
 	/**
 	 * Display a listing of the resource.
 	 *
