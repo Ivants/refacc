@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Mail;
 use App\Order;
 use App\Mail\OrderCreated;
+use App\Mail\OrderUpdated;
 
 class Order extends Model{
 
@@ -22,7 +23,7 @@ class Order extends Model{
 
 
 	public function sendUpdatedMail(){
-		Mail::to("prueebaamck@gmail.com")->send(new OrderUpdated($this));
+		Mail::to("imegamamon@gmail.com")->send(new OrderUpdated($this));
 	}
 
 

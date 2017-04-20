@@ -403,7 +403,7 @@
                                                     <tr>
                                                         <td valign="top" class="bodyContent">
                                                             <div mc:edit="std_content00">
-                                                                <h1 class="h1">Nueva informacion de tu pedido en VIVET</h1>
+                                                                <h1 class="h1">Actualización de tu pedido en VIVET</h1>
                                                             
                                                                 <strong>¡Hola! {{$order->email}}</strong> 
                                                                 Se actualizo la informacion de tu pedido

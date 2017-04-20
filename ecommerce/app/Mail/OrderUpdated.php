@@ -10,15 +10,15 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class OrderUpdated extends Mailable
 {
     use Queueable, SerializesModels;
+
     public $order;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        //
+    public function __construct($order){
+        $this->order = $order;
     }
 
     /**
@@ -28,6 +28,6 @@ class OrderUpdated extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->from("prueebaamck@gmail.com")->view('mailers.order_updated');
     }
 }

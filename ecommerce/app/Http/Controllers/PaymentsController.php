@@ -26,7 +26,8 @@ class PaymentsController extends Controller{
 			\Session::remove('shopping_cart_id');
 			$order = Order::createFromPayPalResponse($response,$shopping_cart);
 			$shopping_cart->approve();
-			$order->sendMail();
+			//Enviamos el corrreo despues de la compra
+			//$order->sendMail();
 		}
 		
 		//dd($order);
