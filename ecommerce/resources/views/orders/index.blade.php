@@ -41,17 +41,19 @@
 									<a href="#" 
 										data-type="text" 
 										data-pk="{{$order->id}}" 
-										data-url="{{url('/orders/$order->id')}}" data-title="Número de guía" 
+										data-url="{{ url("/orders/$order->id")}}"
+										data-title="Número de guía" 
 										data-value="{{$order->guide_number}}"
 										class="set-guide-number"
-										data-name="guide-number">
+										data-name="guide_number">
 									</a>
 								</td>
 								<td>
 									<a href="#" 
 										data-type="select" 
 										data-pk="{{$order->id}}" 
-										data-url="{{url('/orders/$order->id')}}" data-title="Número de guía" 
+										data-url="{{ url("/orders/$order->id")}}"
+										data-title="Número de guía" 
 										data-value="{{$order->status}}"
 										class="select-status"
 										data-name="status">

@@ -16,10 +16,8 @@ class OrdersController extends Controller
 		//El metodo latest es un metodo llamad scope 
 		//note: investigars
 		$orders = Order::latest()->get();
-
 		$totalMonth = Order::totalMonth();
 		$totalMonthCount = Order::totalMonthCount();
-
 		return view('orders.index',['orders' => $orders, 'totalMonth' => $totalMonth, 'totalMonthCount' => $totalMonthCount]);
 	}
 
@@ -32,6 +30,13 @@ class OrdersController extends Controller
 	 */
 	public function update(Request $request, $id)
 	{
-		//
+		$order = Order::find($id);
+		$field = $request->name;
+		//PHP me permite tomar nombres de variables como atributos
+		//de objetos con el mismo nombre
+		$order->$field = $request->value;
+
+		$order->save();
+		return $order->$field;
 	}
 }

@@ -14,10 +14,8 @@ class AddCustomIDColumnToShoppingCarts extends Migration
     public function up()
     {
         Schema::table('shopping_carts', function($table){
-
             //Unique le agrega un index al campo para que la busqueda sea mas rapida
             $table->string('customid')->unique()->nullable();
-
         });
     }
 
