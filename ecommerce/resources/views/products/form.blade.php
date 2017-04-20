@@ -9,6 +9,9 @@
 	<div class="form-group">
 		{{Form::number('pricing',$product->pricing,['class' => 'form-control', 'placeholder' => 'Precio de tu producto en centavos'])}}
 	</div>
+	<div class="form-grup">
+		{{Form::file('cover')}}
+	</div>
 	<div class="form-group">
 		{{Form::textarea('description',$product->description,['class' => 'form-control', 'placeholder' => 'Describe tu producto'])}}
 	</div>

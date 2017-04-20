@@ -49,15 +49,27 @@ class ProductsController extends Controller
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(Request $request)
-	{
+	public function store(Request $request){
+
+		$hasFile = $request->hasFile('cover') && $request->cover->isValid();
 		$product = new Product;
 		$product->title = $request->title;
 		$product->description = $request->description;
 		$product->pricing = $request->pricing;
 		$product->user_id = Auth::user()->id;
 
+		if($hasFile){
+			$extension = $request->cover->extension();
+			$product->extension = $extension;
+		}
+
 		if($product->save()){
+			if($hasFile){
+				//Revisar la funcionalidad del metodo store() usa md5
+				//p
+				$request->cover->storeAs('images',"$product->id.$extension");
+			}
+
 			return redirect("/products");
 		}else{
 			return view("products.create",["product" => $product]);

@@ -15,26 +15,28 @@ class ShoppingCartsController extends Controller{
 		$this->middleware("shoppingcart");
 	}
 
-    public function index(Request $request){
 
-    	//Movemos la logica de la busqueda del carrito al middleware
-		// $shopping_cart_id = \Session::get('shopping_cart_id');
-		// $shopping_cart = ShoppingCart::findOrCreateBySessionID($shopping_cart_id);
-
+	public function checkout(Request $request){
 
 		//La busqueda se hace en el middleware y los datos quedan aquí
 		$shopping_cart = $request->shopping_cart;
-
 		//Espera nuestro carrito de compras
 		$paypal = new PayPal($shopping_cart);
 		$payment = $paypal->generate();
 		return redirect($payment->getApprovalLink());
 
+	}
 
+
+    public function index(Request $request){
+
+    	//Movemos la logica de la busqueda del carrito al middleware
+		// $shopping_cart_id = \Session::get('shopping_cart_id');
+		// $shopping_cart = ShoppingCart::findOrCreateBySessionID($shopping_cart_id);
+    	$shopping_cart = $request->shopping_cart;
+	
 
 		//Obtenemos los productos que estan en el carrito
-
-
 		$products = $shopping_cart->products()->get();
 		$total = $shopping_cart->total();
 		return view('shopping_carts.index',['products' => $products, 'total' => $total]);
