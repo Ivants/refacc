@@ -33,6 +33,6 @@ class OrderCreated extends Mailable{
 	 */
 	public function build(){
 		//Podemos poner un alias
-		return $this->from("mck@gmail.com")->view('mailers.order');
+		return $this->from('mck@gmail.com')->view('mailers.order');
 	}
 }

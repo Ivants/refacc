@@ -442,7 +442,7 @@
 																<tr>
 																	<td valign="middle" class="templateButtonContent">
 																		<div mc:edit="std_content02">
-																			<a href="{{url('/compras/'.$order->shoppingCartID())}}" target="_blank">Ver más información de mi pedido</a>
+																			<a href="{{url("/compras/".$order->shoppingCartID())}}" target="_blank">Ver más información de mi pedido</a>
 																		</div>
 																	</td>
 																</tr>

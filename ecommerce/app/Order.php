@@ -31,6 +31,7 @@ class Order extends Model{
 		return $this->shopping_cart->customid;
 	}
 
+
 	public function scopeLatest($query){
 		return $query->orderID()->monthly();
 	}

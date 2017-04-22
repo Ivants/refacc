@@ -28,12 +28,14 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
+        Order::Updated(function($order){
+            $order->sendUpdatedMail();
+        });
+        
         Order::Created(function($order){
             $order->sendMail();
         });
 
-        Order::Updated(function($order){
-            $order->sendUpdatedMail();
-        });
+
     }
 }
