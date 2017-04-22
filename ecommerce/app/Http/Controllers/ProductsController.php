@@ -66,7 +66,6 @@ class ProductsController extends Controller
 		if($product->save()){
 			if($hasFile){
 				//Revisar la funcionalidad del metodo store() usa md5
-				//p
 				$request->cover->storeAs('images',"$product->id.$extension");
 			}
 

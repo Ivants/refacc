@@ -436,7 +436,7 @@
 														</td>
 													</tr>
 												
-													<tr>
+<!-- 													<tr>
 														<td align="center" valign="top" style="padding-top:0;">
 															<table border="0" cellpadding="15" cellspacing="0" class="templateButton">
 																<tr>
@@ -448,7 +448,7 @@
 																</tr>
 															</table>
 														</td>
-													</tr>
+													</tr> -->
 												</table>
 												<!-- // End Module: Standard Content \\ -->
 												

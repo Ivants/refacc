@@ -1,6 +1,6 @@
 <!-- Formulario -->
 <!-- En url pongo lo que venga en la variable url y method desde create o edit-->
-{!! Form::open(['url' => $url,'method' => $method]) !!}
+{!!Form::open([ 'url' => $url,'method' => $method, 'files' => true])!!}
 
 	<div class="form-group">
 	<!-- Despues del nombre del campo pongo los datos que vienen desde la base de datos-->
