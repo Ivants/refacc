@@ -71,7 +71,8 @@ class ProductsController extends Controller
 
 			return redirect("/products");
 		}else{
-			return view("products.create",["product" => $product]);
+			//return view("products.create",["product" => $product]);
+        	return view ("products.create");
 		}
 	}
 

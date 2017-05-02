@@ -54,3 +54,25 @@ Route::resource('in_shopping_carts','InShoppingCartsController',['only' => ['sto
 Route::resource('compras','ShoppingCartsController',['only' => ['show']]);
 
 Route::resource('orders','OrdersController',['only' => ['index', 'update']]);
+
+//Rutas de las imagenes
+Route::get('products/images/{filename}', function($filename){
+
+	$path = storage_path("app/images/$filename");
+	dd($path);
+
+	if(!\File::exists($path)) abort (404);
+
+	//Obtenemos el archivo
+	$file = \File::get($path);
+	//dd($file);
+	//Obtenemos el tipo de archivo
+	$type = \File::mimeType($path);
+	//Todo salio bien con el 200
+	$response = Response::make($file,200);
+	//COlocamos el tipo del archivo
+	$response->header('Content-Type',$type);
+	//Descargamos el archivo
+	return dd($response);
+
+});
