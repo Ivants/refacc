@@ -23,6 +23,7 @@ Route::get('/', function () {
 //Ruta individual
 Route::get('/carrito', 'ShoppingCartsController@index');
 Route::post('/carrito', 'ShoppingCartsController@checkout');
+
 Route::get('/payments/store','PaymentsController@store');
 
 Auth::routes();
